@@ -1,0 +1,361 @@
+.workshops-minimal-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 8rem;
+  background: transparent;
+}
+
+.workshops-minimal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.workshops-minimal-header {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 2rem 0;
+}
+
+.workshops-minimal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 10vw, 6rem);
+  font-weight: 700;
+  color: white;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #a4aeae 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.workshops-minimal-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #bcbcbc;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.workshops-minimal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+
+.workshop-minimal-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.workshop-minimal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.workshop-minimal-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.workshop-minimal-card:hover::before {
+  opacity: 1;
+}
+
+.workshop-minimal-card.expanded {
+  grid-column: span 1;
+}
+
+.workshop-minimal-main {
+  padding: 3rem;
+}
+
+.workshop-minimal-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.workshop-minimal-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.workshop-minimal-card-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #a4aeae;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.workshop-minimal-card-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #bcbcbc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.workshop-minimal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.minimal-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(164, 174, 174, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.minimal-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.minimal-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: white;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.workshop-minimal-toggle-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #a4aeae 0%, #8a9394 100%);
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.workshop-minimal-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(164, 174, 174, 0.3);
+}
+
+.workshop-minimal-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 3rem;
+}
+
+.workshop-minimal-details.show {
+  max-height: 2000px;
+  padding: 0 3rem 3rem;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.minimal-detailed-info {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #bcbcbc;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.minimal-section {
+  margin-bottom: 2rem;
+}
+
+.minimal-section h4 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: #a4aeae;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.minimal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.minimal-tag {
+  padding: 0.5rem 1rem;
+  background: rgba(164, 174, 174, 0.15);
+  border: 1px solid rgba(164, 174, 174, 0.3);
+  border-radius: 20px;
+  color: #a4aeae;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.minimal-content-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.minimal-content-list li {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #bcbcbc;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.minimal-content-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #a4aeae;
+  font-weight: bold;
+}
+
+.minimal-capacity {
+  padding: 1rem;
+  background: rgba(164, 174, 174, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  font-weight: 600;
+}
+
+.workshops-minimal-cta {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.workshops-minimal-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+}
+
+.minimal-cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.minimal-cta-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #bcbcbc;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.minimal-cta-button {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #a4aeae 0%, #8a9394 100%);
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.minimal-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(164, 174, 174, 0.4);
+}
+
+@media (max-width: 768px) {
+  .workshops-minimal-page {
+    padding-top: 6rem;
+  }
+
+  .workshops-minimal-container {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .workshops-minimal-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .workshop-minimal-main {
+    padding: 2rem;
+  }
+
+  .workshop-minimal-details.show {
+    padding: 0 2rem 2rem;
+  }
+
+  .minimal-content-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .workshop-minimal-main {
+    padding: 1.5rem;
+  }
+
+  .workshop-minimal-icon {
+    font-size: 3rem;
+  }
+
+  .workshop-minimal-card-title {
+    font-size: 1.5rem;
+  }
+}

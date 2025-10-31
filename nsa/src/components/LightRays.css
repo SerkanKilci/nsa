@@ -1,0 +1,10 @@
+.light-rays-container {
+  position: fixed;
+  inset: 0; /* tüm ekranı kapla */
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* arka planda kal */
+  pointer-events: none;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center, #020202 0%, #000000 100%);
+}

@@ -1,0 +1,595 @@
+/* Corporate Page */
+.corporate-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 8rem;
+  background: transparent;
+  overflow-x: hidden;
+}
+
+.corporate-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+/* Animation classes */
+.corporate-header,
+.corporate-hero-section,
+.corporate-workshops-section,
+.corporate-benefits-section,
+.corporate-why-section,
+.corporate-faq-section,
+.corporate-cta-section,
+.workshop-card,
+.corporate-faq-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Header */
+.corporate-header {
+  text-align: center;
+  margin-bottom: 6rem;
+  padding: 2rem 0;
+}
+
+.corporate-main-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 7rem);
+  font-weight: 700;
+  color: white;
+  letter-spacing: 6px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #a4aeae 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.corporate-header-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Hero Section */
+.corporate-hero-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 4rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0.5;
+}
+
+.hero-icon {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+  filter: grayscale(0.3);
+  transition: all 0.3s ease;
+}
+
+.corporate-hero-section:hover .hero-icon {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: #a4aeae;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.hero-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.05rem;
+  color: #bcbcbc;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Workshops Section */
+.corporate-workshops-section {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: white;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #a4aeae 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.workshop-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.workshop-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.workshop-card:hover::before {
+  opacity: 1;
+}
+
+.workshop-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card:hover .workshop-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.workshop-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: #a4aeae;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
+}
+
+.workshop-description {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: #bcbcbc;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Benefits Section */
+.corporate-benefits-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 4rem;
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0.5;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(164, 174, 174, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  background: rgba(164, 174, 174, 0.15);
+  transform: translateX(5px);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.benefit-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #bcbcbc;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Why Us Section */
+.corporate-why-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 4rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-why-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0.5;
+}
+
+.why-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+.why-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #bcbcbc;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.result-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: rgba(164, 174, 174, 0.15);
+  border-left: 4px solid #a4aeae;
+  border-radius: 0 12px 12px 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.result-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.result-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  line-height: 1.6;
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+/* FAQ Section */
+.corporate-faq-section {
+  margin-bottom: 5rem;
+}
+
+.faq-subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  color: #a4aeae;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.corporate-faq-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-faq-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.corporate-faq-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.corporate-faq-card:hover::before {
+  opacity: 1;
+}
+
+.corporate-faq-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.corporate-faq-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  filter: grayscale(0.3);
+  transition: all 0.3s ease;
+  margin-top: 0.2rem;
+}
+
+.corporate-faq-card:hover .corporate-faq-icon {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.corporate-faq-question h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  color: #a4aeae;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.corporate-faq-answer {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #bcbcbc;
+  line-height: 1.65;
+  margin: 0;
+  text-align: left;
+}
+
+/* CTA Section */
+.corporate-cta-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.corporate-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #a4aeae, transparent);
+}
+
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: white;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.cta-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: #bcbcbc;
+  margin-bottom: 2.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #a4aeae 0%, #8a9394 100%);
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(164, 174, 174, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .workshops-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .corporate-page {
+    padding-top: 6rem;
+  }
+
+  .corporate-container {
+    padding: 0 1.5rem 3rem;
+  }
+
+  .corporate-header {
+    margin-bottom: 4rem;
+  }
+
+  .corporate-hero-section,
+  .corporate-benefits-section,
+  .corporate-why-section,
+  .corporate-cta-section {
+    padding: 3rem 2rem;
+  }
+
+  .hero-text,
+  .why-text,
+  .cta-text {
+    text-align: left;
+  }
+
+  .workshops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .corporate-faq-card {
+    padding: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .corporate-hero-section,
+  .corporate-benefits-section,
+  .corporate-why-section,
+  .corporate-cta-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-icon {
+    font-size: 4rem;
+  }
+
+  .workshop-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .corporate-faq-card {
+    padding: 1;
+  }
+}
+  
