@@ -3,57 +3,67 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './WhatAwaits.css';
 import Footer from './Footer';
-
+import { 
+  FaBook,           
+  FaGem,           
+  FaStar,           
+  FaHandshake,      
+  FaHeart,          
+  FaDumbbell,       
+  FaFan,
+  FaTheaterMasks,
+      
+} from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 const questionsData = [
   {
     id: 1,
-    question: "Profesyonel olmam gerekiyor mu?",
+    question: "PROFESYONEL OLMAM GEREKIYOR MU?",
     answer: "Hiç gerek yok. Bizim için önemli olan sahnede ne kadar iyi olduğun değil, orada olmayı neden istediğin. Akademide kimseyi sanatçı yapmaya çalışmıyoruz ama herkesin içindeki yaratıcı sesi bulmasına yardımcı oluyoruz.",
-    icon: "🎭"
+    icon: <FaTheaterMasks></FaTheaterMasks>
   },
   {
     id: 2,
-    question: "Ne tür eğitimler var?",
+    question: "NE TÜR EĞITIMLER VAR?",
     answer: "Oyunculuk, dans ve müzik. Ama sadece teknik eğitim değil; ritim, beden, doğaçlama ve sahneyle kurulan bağ üzerine bir deneyim alanı. Kısacası, sanatın her biçimiyle tanışabileceğin bir oyun alanı.",
-    icon: "📚"
+    icon: <FaBook></FaBook>
   },
   {
     id: 3,
-    question: "Nasıl bir atmosfer var?",
+    question: "NASIL BIR ATMOSFER VAR?",
     answer: "Ciddi ama kasılmayan, disiplinli ama sıcacık. Burada rekabet değil, paylaşım var. Herkesin birbirinden beslendiği, birlikte ürettiği ve sanatla sosyalleştiği bir alan.",
-    icon: "✨"
+    icon: <FaStar></FaStar>
   },
   {
     id: 4,
-    question: "Neden Nişantaşı Sanat Akademisi?",
+    question: "NEDEN NIŞANTAŞI SANAT AKADEMISI?",
     answer: "Çünkü biz sahneleri doldurmak için değil, insanları sanatla buluşturmak için varız. Sanatı hayatın ortasına koyuyoruz çünkü inanıyoruz ki, herkesin içinde biraz sahne ışığı vardır.",
-    icon: "🌟"
+    icon: <FaGem></FaGem>
   },
   {
     id: 5,
-    question: "Akademiye ilk geldiğimde beni ne karşılayacak?",
+    question: "AKADEMIYE ILK GELDIĞIMDE BENI NE KARŞILAYACAK?",
     answer: "Seni kostümler değil, samimi bir \"hoş geldin\" karşılayacak. Burada ilk adımını attığında, kendini sahnenin ortasında değil bir topluluğun içinde hissedersin.",
-    icon: "🤝"
+    icon: <FaHandshake></FaHandshake>
   },
   {
     id: 6,
-    question: "Arkadaş edinir miyim?",
+    question: "ARKADAŞ EDINIR MIYIM?",
     answer: "Kesinlikte. Burada insanlar sadece aynı sınıfta değil, aynı duyguda buluşuyor. Birlikte üretmek, birlikte gülmek, bazen birlikte susmak bile bu akademinin en güzel tarafı.",
-    icon: "❤️"
+    icon: <FaHeart></FaHeart>
   },
   {
     id: 7,
-    question: "Ya çekinirsem, yapamam sanırsam?",
+    question: "YA ÇEKINIRSEM, YAPAMAM SANIRSAM?",
     answer: "Hiç sorun değil. Çünkü burada kimse senden kusursuz olmanı beklemiyor. Biz kusurlarıyla güzel, içten gelen hâlleri seviyoruz. Zaten en güzel performanslar da oradan doğuyor.",
-    icon: "💪"
+    icon: <FaDumbbell></FaDumbbell>
   },
   {
     id: 8,
-    question: "Burada neler değişir?",
+    question: "BURADA NELER DEĞIŞIR?",
     answer: "Bakışın değişir, yürüyüşün, nefesin… Bir sahneye adım attığında artık sadece rol yapmazsın; kendini, bir başkasında tanımayı öğrenirsin. Kısacası, sanat senden bir parça almaz seni tamamlar.",
-    icon: "🦋"
+    icon: <FaFan></FaFan>
   }
 ];
 
@@ -122,14 +132,14 @@ export default function WhatAwaits() {
       <div className="what-awaits-container">
         {/* Header */}
         <div ref={headerRef} className="what-awaits-header">
-          <h1 className="what-awaits-title">Seni Neler Bekliyor?</h1>
+          <h1 className="what-awaits-title">SENİ NELER BEKLİYOR?</h1>
           <div className="title-underline"></div>
         </div>
 
         {/* Intro Section */}
         <section ref={introRef} className="intro-section">
           <div className="intro-content">
-            <h2 className="intro-title">Akademide Seni Neler Bekliyor?</h2>
+            <h2 className="intro-title">AKADEMİDE SENİ NELER BEKLİYOR?</h2>
             <p className="intro-text">
               Nişantaşı Sanat Akademisi'nde seni bekleyen deneyim, sadece bir eğitim programından çok daha fazlası. 
               Burada sanatla kuracağın bağ, kendini keşfetme yolculuğun ve paylaştığın her anın bir parçası olacak.
@@ -145,9 +155,9 @@ export default function WhatAwaits() {
               ref={addToCardRefs}
               className="question-card"
             >
-              <div className="question-icon-wrapper">
+              { <div className="question-icon-wrapper">
                 <span className="question-icon">{item.icon}</span>
-              </div>
+              </div> }
               <div className="question-content">
                 <h3 className="question-title">{item.question}</h3>
                 <p className="question-answer">{item.answer}</p>
@@ -166,10 +176,10 @@ export default function WhatAwaits() {
             </p>
             <div className="cta-buttons">
               <a href="/workshops" className="cta-btn primary">
-                Atölyelerimizi İncele
+                ATÖLYELERİMİZİ İNCELE
               </a>
               <a href="/contact" className="cta-btn secondary">
-                Bizimle İletişime Geç
+                BIZIMLE İLETİŞİME GEÇ
               </a>
             </div>
           </div>

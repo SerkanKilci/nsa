@@ -1,69 +1,81 @@
 import React, { useEffect, useRef } from 'react';
 import './Corporate.css';
 import Footer from './Footer';
-
+import { 
+  FaTheaterMasks,   // 🎭
+  FaHandshake,      // 🤝
+  FaLightbulb,      // 💡
+  FaCircle,         // 🎪 (tam karşılığı yok, FaTent veya FaUmbrella kullanılabilir)
+  FaUser,           // 👤
+  FaBullseye,       // 🎯
+  FaBrain,          // 🧠
+  FaDumbbell,       // 💪
+  FaGift,           // 🎉 (veya FaCertificate)
+  FaBuilding,
+  FaUmbrella        // 🏢
+} from 'react-icons/fa';
 const workshopData = [
   {
-    icon: "🎭",
-    title: "Sahne ve İletişim Atölyesi",
+    icon: <FaTheaterMasks></FaTheaterMasks>,
+    title: "SAHNE VE İLETİŞİM ATÖLYESİ",
     description: "Sahne önü özgüveni ve etkili iletişim becerileri geliştirme"
   },
   {
-    icon: "💡",
-    title: "Yaratıcı Düşünme & İfade",
+    icon: <FaLightbulb></FaLightbulb>,
+    title: "YARATICI DÜŞÜNME & İFADE",
     description: "Yaratıcı problem çözme ve özgün ifade gücü kazandırma"
   },
   {
-    icon: "🤝",
-    title: "Takım Ruhu ve Empati",
+    icon: <FaHandshake></FaHandshake>,
+    title: "TAKIM RUHU VE EMPATİ",
     description: "Kolektif çalışma bilinci ve empati kaslarını güçlendirme"
   },
   {
-    icon: "🎪",
-    title: "Doğaçlama ile İletişim",
+    icon: <FaUmbrella></FaUmbrella>,
+    title: "DOĞAÇLAMA İLE İLETİŞİM",
     description: "Spontane düşünme ve hızlı adaptasyon becerisi geliştirme"
   },
   {
-    icon: "👤",
-    title: "Beden Dili ve Sunum",
+    icon: <FaUser></FaUser>,
+    title: "BEDEN DİLİ VE SUNUM",
     description: "Etkili beden dili kullanımı ve profesyonel sunum teknikleri"
   }
 ];
 
 const benefitsData = [
-  { icon: "🎯", text: "Takım ruhu ve iletişim becerileri güçlenir" },
-  { icon: "🧠", text: "Yaratıcılık ve problem çözme kasları gelişir" },
-  { icon: "💪", text: "Stres yönetimi ve sahne önü özgüveni artar" },
-  { icon: "🎉", text: "Katılımcılar eğlenerek öğrenir, motive olur" }
+  { icon: <FaBullseye></FaBullseye>, text: "Takım ruhu ve iletişim becerileri güçlenir" },
+  { icon: <FaBrain></FaBrain>, text: "Yaratıcılık ve problem çözme kasları gelişir" },
+  { icon: <FaDumbbell></FaDumbbell>, text: "Stres yönetimi ve sahne önü özgüveni artar" },
+  { icon: <FaGift></FaGift>, text: "Katılımcılar eğlenerek öğrenir, motive olur" }
 ];
 
 const faqData = [
   {
-    question: "Kurumsal eğitimlerin içeriği sabit mi yoksa kurumlara göre mi şekilleniyor?",
+    question: "KURUMSAL EĞİTİMLERİN İÇERİĞİ SABİT Mİ YOKSA KURUMLARA GÖRE Mİ ŞEKİLLENİYOR?",
     answer: "Eğitimlerimizin tamamı kurumların ihtiyaçlarına göre özelleştirilir. Şirket kültürünüz, ekip yapınız ve hedefleriniz analiz edilerek sizin için özel bir içerik oluşturulur."
   },
   {
-    question: "Eğitimler nerede yapılıyor?",
+    question: "EĞİTİMLER NEREDE YAPILIYOR?",
     answer: "Eğitimleri dilerseniz Nişantaşı Art Akademi profesyonel stüdyolarında, dilerseniz kendi ofisinizde ya da uygun gördüğünüz farklı bir mekânda gerçekleştirebiliriz. Mekân seçimi, eğitim içeriğine ve katılımcı sayısına göre belirlenir."
   },
   {
-    question: "Eğitimler ne kadar sürüyor?",
+    question: "EĞİTİMLER NE KADAR SÜRÜYOR?",
     answer: "Programlarımız genellikle yarım gün, tam gün veya iki tam gün olarak planlanır. Ancak kurumun ihtiyaçlarına göre süre ve yoğunluk esnek şekilde tasarlanır."
   },
   {
-    question: "Katılımcı sayısında bir sınır var mı?",
+    question: "KATILIMCI SAYISINDA BİR SINIR VAR MI?",
     answer: "Eğitimin içeriğine bağlı olarak değişmekle birlikte, ideal katılımcı sayısı 10 ila 25 kişi arasındadır. Ancak büyük ekipler için özel grup çalışmaları veya paralel oturumlar da düzenlenebilir."
   },
   {
-    question: "Hangi pozisyonlardaki çalışanlar için uygundur?",
+    question: "HANGİ POZİSYONLARDAKİ ÇALIŞANLAR İÇİN UYGUNDUR?",
     answer: "Eğitimlerimiz; yönetici, orta kademe, satış, insan kaynakları, iletişim ve yaratıcı departman çalışanları dahil olmak üzere tüm beyaz yakalı profesyonellere uygundur. İçerikler, her seviyeye göre yeniden yapılandırılır."
   },
   {
-    question: "Eğitimler eğlence mi, gelişim mi odaklı?",
+    question: "EĞİTİMLER EĞLENCE Mİ, GELİŞİM Mİ ODAKLI?",
     answer: "Her ikisi de. Eğitimlerimizde sanat temelli eğlenceli uygulamalar kullanılır; ancak amaç her zaman katılımcıların iletişim, yaratıcılık ve özgüven becerilerini geliştirmektir. Yani keyifli olduğu kadar ölçülebilir gelişim odaklıdır."
   },
   {
-    question: "Kurum olarak eğitim talebinde bulunmak istiyoruz, süreç nasıl ilerliyor?",
+    question: "KURUM OLARAK EĞİTİM TALEBİNDE BULUNMAK İSTİYORUZ, SÜREÇ NASIL İLERLİYOR?",
     answer: "İlk adımda sizinle kısa bir ön görüşme yapıyoruz. Hedeflerinizi, ekip yapınızı ve beklentilerinizi dinledikten sonra size özel bir program önerisi ve teklif dosyası hazırlıyoruz. Onay sonrası tarih planlaması yapılarak uygulamaya geçiliyor."
   }
 ];
@@ -135,14 +147,14 @@ export default function Corporate() {
       <div className="corporate-container">
         {/* Header */}
         <div ref={headerRef} className="corporate-header">
-          <h1 className="corporate-main-title">Kurumsal Eğitimler</h1>
+          <h1 className="corporate-main-title">KURUMSAL EĞİTİMLER</h1>
           <div className="corporate-header-line"></div>
         </div>
 
         {/* Hero Section */}
         <section ref={heroRef} className="corporate-hero-section">
-          <div className="hero-icon">🏢</div>
-          <h2 className="hero-title">Yaratıcılıkla Güçlenen Kurumlar</h2>
+          <div className="hero-icon"><FaBuilding></FaBuilding></div>
+          <h2 className="hero-title">YARATICILIKLA GÜÇLENEN KURUMLAR</h2>
           <p className="hero-subtitle">Nişantaşı Art Akademi Institutional</p>
           <p className="hero-text">
             Kurumların en değerli kaynağına, yani insana dokunuyoruz.
@@ -157,7 +169,7 @@ export default function Corporate() {
 
         {/* Workshops Section */}
         <section ref={workshopsRef} className="corporate-workshops-section">
-          <h2 className="section-title">Eğitim Başlıklarımızdan Bazıları</h2>
+          <h2 className="section-title">EĞİTİM BAŞLIKLARIMIZDAN BAZILARI</h2>
           <div className="workshops-grid">
             {workshopData.map((workshop, index) => (
               <div
@@ -175,7 +187,7 @@ export default function Corporate() {
 
         {/* Benefits Section */}
         <section ref={benefitsRef} className="corporate-benefits-section">
-          <h2 className="section-title">Kurumsal Eğitimlerimizle</h2>
+          <h2 className="section-title">KURUMSAL EĞİTİMLERİMİZLE</h2>
           <div className="benefits-grid">
             {benefitsData.map((benefit, index) => (
               <div key={index} className="benefit-item">
@@ -188,7 +200,7 @@ export default function Corporate() {
 
         {/* Why Us Section */}
         <section ref={whyUsRef} className="corporate-why-section">
-          <h2 className="why-title">Neden Nişantaşı Sanat Akademisi?</h2>
+          <h2 className="why-title">NEDEN NİŞANTAŞİ SANAT AKADEMİSİ?</h2>
           <p className="why-text">
             Çünkü biz eğitimi bir seminer değil, bir sahne deneyimi olarak görüyoruz.
             Her kurumun kendine özgü bir hikâyesi vardır; biz o hikâyeyi sahneye taşır,
@@ -214,7 +226,7 @@ export default function Corporate() {
                 className="corporate-faq-card"
               >
                 <div className="corporate-faq-question">
-                  <span className="corporate-faq-icon">💭</span>
+                  <span className="corporate-faq-icon"></span> 
                   <h3>{faq.question}</h3>
                 </div>
                 <p className="corporate-faq-answer">{faq.answer}</p>
@@ -225,7 +237,7 @@ export default function Corporate() {
 
         {/* CTA Section */}
         <section ref={ctaRef} className="corporate-cta-section">
-          <h2 className="cta-title">Sizin İçin Tasarlayalım</h2>
+          <h2 className="cta-title">SİZİN İÇİN TASARLAYALIM</h2>
           <p className="cta-text">
             Kurum kültürünüzü güçlendirecek, çalışanlarınızı motive edecek ve ofis rutininin dışına çıkaracak
             deneyimler tasarlıyoruz. Her biri eğlenceli, yenilikçi ve sahne temelli bu eğitimlerle

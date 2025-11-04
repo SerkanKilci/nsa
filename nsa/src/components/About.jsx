@@ -3,7 +3,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './About.css';
 import Footer from './Footer';
-
+import { 
+  FaTheaterMasks,   
+  FaGem,            
+  FaBullseye,       
+  FaPalette,        
+  FaHandshake,      
+  FaLightbulb,      
+  FaStar            
+} from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 const faqData = [
@@ -176,9 +184,9 @@ export default function About() {
 
         <div className="about-content">
           <section ref={aboutSectionRef} className="about-section main-about">
-            <div className="section-icon">🎭</div>
+            <div className="section-icon"><FaTheaterMasks></FaTheaterMasks></div>
             <div className="section-content">
-              <h2 className="section-title">Nişantaşı Sanat Akademisi</h2>
+              <h2 className="section-title">NIİŞANTAŞI SANAT AKADEMİSİ</h2>
               <p className="section-text">
                 Nişantaşı Sanat Akademisi; oyunculuk, dans ve müzik alanlarında çağdaş, yenilikçi ve 
                 disiplinli bir sanat eğitimi sunan sahne sanatları kurumudur. Akademi, sanatın sadece 
@@ -196,11 +204,11 @@ export default function About() {
           <div className="vision-mission-grid">
             <section ref={visionSectionRef} className="about-section vision-section">
               <div className="section-badge">
-                <span className="badge-icon">✨</span>
-                <span className="badge-text">Vizyon</span>
+                <span className="badge-icon"><FaGem></FaGem></span>
+                <span className="badge-text">VİZYON</span>
               </div>
               <div className="section-content">
-                <h2 className="section-title-alt">Sanatı Herkes İçin Ulaşılabilir Kılmak</h2>
+                <h2 className="section-title-alt">SANATI HERKES İÇİN ULAŞILABİLİR KILMAK</h2>
                 <p className="section-text">
                   Nişantaşı Sanat Akademisi, çağdaş sanat eğitimiyle bireyleri sadece sahneye değil, 
                   hayata hazırlayan; üretken, paylaşımcı ve bilinçli bireyler yetiştirmeyi vizyon edinir.
@@ -216,11 +224,11 @@ export default function About() {
 
             <section ref={missionSectionRef} className="about-section mission-section">
               <div className="section-badge">
-                <span className="badge-icon">🎯</span>
-                <span className="badge-text">Misyon</span>
+                <span className="badge-icon"><FaBullseye></FaBullseye></span>
+                <span className="badge-text">MİSYON</span>
               </div>
               <div className="section-content">
-                <h2 className="section-title-alt">Yaratıcılığı Geliştiren Eğitim</h2>
+                <h2 className="section-title-alt">YARATICILIĞI GELİŞTİREN EĞİTİM</h2>
                 <p className="section-text">
                   Sanatı sosyalleştiren, bireyin yaratıcılığını ve ifade gücünü geliştiren eğitim 
                   programlarıyla; güvenli, ilham veren ve kolektif bir öğrenme ortamı yaratmak.
@@ -243,7 +251,7 @@ export default function About() {
               {faqData.map((faq, index) => (
                 <div key={index} ref={addToFaqRefs} className="faq-card">
                   <div className="faq-question">
-                    <span className="faq-icon">💭</span>
+                    <span className="faq-icon"></span>
                     <h3>{faq.question}</h3>
                   </div>
                   <p className="faq-answer">{faq.answer}</p>
@@ -256,28 +264,28 @@ export default function About() {
             <h2 className="values-title">DEĞERLERİMİZ</h2>
             <div className="values-grid">
               <div className="value-card">
-                <div className="value-icon">🎨</div>
+                <div className="value-icon"><FaPalette></FaPalette></div>
                 <h3 className="value-title">Yaratıcılık</h3>
                 <p className="value-text">
                   Her bireyin özgün ifade gücünü keşfetmesini destekliyoruz
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🤝</div>
+                <div className="value-icon"><FaHandshake></FaHandshake></div>
                 <h3 className="value-title">İŞBİRLİĞİ</h3>
                 <p className="value-text">
                   Kolektif öğrenme ve paylaşma kültürünü teşvik ediyoruz
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">💡</div>
+                <div className="value-icon"><FaLightbulb></FaLightbulb></div>
                 <h3 className="value-title">YENİLİKÇİLİK</h3>
                 <p className="value-text">
                   Çağdaş ve güncel sanat yaklaşımlarıyla eğitim veriyoruz
                 </p>
               </div>
               <div className="value-card">
-                <div className="value-icon">🌟</div>
+                <div className="value-icon"><FaStar></FaStar></div>
                 <h3 className="value-title">KAPSAYICILIK</h3>
                 <p className="value-text">
                   Sanatı herkes için erişilebilir ve anlamlı kılıyoruz

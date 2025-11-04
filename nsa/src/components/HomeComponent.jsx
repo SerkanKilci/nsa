@@ -22,9 +22,15 @@ export default function HomeComponent() {
                 <p className="welcome-description">
                     Nişantaşı'nda Bir Sanat Okulu
                 </p>
-          
-                    <h1 className="welcome-title">HOŞ GELDİNİZ</h1>
-                
+                <h1 className="welcome-title">HOŞ GELDİNİZ</h1>
+            </div>
+
+            {/* Gallery başlık ve açıklama */}
+            <div className="gallery-intro">
+                <h2 className="gallery-title">GALERİMİZ</h2>
+                <p className="gallery-description">
+                    Akademimizden anlık görüntüler.
+                </p>
             </div>
 
             <div className="dome-section">

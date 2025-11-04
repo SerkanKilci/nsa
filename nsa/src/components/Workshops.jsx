@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './Workshops.css';
+import { FaTheaterMasks, FaMusic, FaStar } from 'react-icons/fa';
 import Footer from './Footer';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +19,7 @@ const workshopsData = [
     capacity: '8 kişilik ferah sınıflar',
     courses: ['Oyunculuk', 'Doğaçlama', 'Diksiyon', 'Ses / Nefes', 'Beden / Hareket', 'Genel Kültür', 'Metin Çözümleme'],
     content: ['Ansambl oluşturma', 'Oyun okuma', 'Oyun yorumlama', 'Algı çalışmaları', 'Bedenini tanıma', 'Takım çalışmaları', 'Bireysel beceri çalışmaları', 'Doğru nefes teknikleri', 'Sahneye çıkma deneyimi'],
-    icon: '🎭'
+    icon: <FaTheaterMasks></FaTheaterMasks>
   },
   {
     id: 2,
@@ -31,7 +32,7 @@ const workshopsData = [
     capacity: 'Konforlu ve nezih sınıflar',
     courses: ['Dans', 'Ritim', 'Koreografi', 'Doğaçlama', 'Genel Kültür', 'Beden Hareket'],
     content: ['Temel beden ısınmaları', 'Merkezleme', 'Bedenin tepkileri', 'Ritim ve müzikalite', 'Fiziksel duygu çalışmaları', 'Karakterin bedeni', 'Doğaçlama ile hikayeleme', 'Grup dinamiği', 'Dans performansı yaratım'],
-    icon: '💃'
+    icon: <FaMusic></FaMusic>
   },
   {
     id: 3,
@@ -44,7 +45,7 @@ const workshopsData = [
     capacity: '10 kişilik ferah sınıflar',
     courses: ['Temel Oyunculuk', 'Doğaçlama', 'Beden / Hareket'],
     content: ['Ansambl oluşturma', 'Oyun oluşturma', 'Oyun yorumlama', 'Algı çalışmaları', 'Beden ile farkındalık', 'Takım çalışmaları'],
-    icon: '⭐'
+    icon: <FaStar></FaStar>
   }
 ];
 
