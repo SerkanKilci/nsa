@@ -3,7 +3,7 @@ import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';
 
 const DEFAULT_IMAGES = Array.from({ length: 13 }, (_, i) => ({
-  src: new URL(`../path/${i + 1}.jpeg`, import.meta.url).href,
+  src: new URL(`../path/${i + 1}.webp`, import.meta.url).href,
   alt: `Gallery image ${i + 1}`
 }));
 

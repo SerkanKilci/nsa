@@ -9,7 +9,7 @@ export default function HomeComponent() {
         <div className="home-container">
             <div className="truefocus-wrapper">
                 <TrueFocus
-                    sentence="Nişantaşı Sanat Akademisi"
+                    sentence="Nişantaşı Art Akademi"
                     manualMode={false}
                     blurAmount={3}
                     borderColor="grey"
